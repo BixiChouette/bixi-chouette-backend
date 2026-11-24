@@ -7,6 +7,9 @@ import { DatabaseModule } from './database/database.module';
 import databaseConfig from './config/database.config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import {BronzeTrip, BronzeTripSchema} from './schemas/bronze-trip.schema';
+import { SilverTrip, SilverTripSchema } from './schemas/silver-trip.schema';
+import { GoldStat, GoldStatSchema } from './schemas/gold-stat.schema';
 
 @Module({
   imports: [
