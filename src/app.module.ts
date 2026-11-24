@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
-<<<<<<< HEAD
 import * as Joi from 'joi';
 import { DatabaseModule } from './database/database.module';
 
@@ -32,23 +31,6 @@ import { GoldStat, GoldStatSchema } from './schemas/gold-stat.schema';
       }),
     }),
     DatabaseModule,
-=======
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { ObservationsModule } from './observations/observations.module';
-
-@Module({
-  imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
-    MongooseModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: (config: ConfigService) => ({
-        uri: config.get<string>('MONGODB_URI'),
-      }),
-      inject: [ConfigService],
-    }),
-    ObservationsModule,
->>>>>>> 8492801f47fc1f5863bbab265b0772aae6b8442f
   ],
   controllers: [AppController],
   providers: [AppService],
