@@ -5,7 +5,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 export class BronzeTrip {
   // Données brutes d'une ligne 
   @Prop({ type: Object, required: true })
-  rawData: any;
+  raw_data: any;
 
   // Identifiant unique 
   @Prop({ required: true, unique: true })
