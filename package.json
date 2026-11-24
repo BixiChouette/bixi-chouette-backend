@@ -7,6 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
+    "import:csv": "node --max-old-space-size=4096 -r ts-node/register src/scripts/import-csv.ts",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -21,8 +22,12 @@
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
+    "@nestjs/config": "^12.1.1",
     "@nestjs/core": "^11.0.1",
+    "@nestjs/mongoose": "^12.0.1",
     "@nestjs/platform-express": "^11.0.1",
+    "csv-parser": "^3.2.1",
+    "mongoose": "^9.12.3",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
