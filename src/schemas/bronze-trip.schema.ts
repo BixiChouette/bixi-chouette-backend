@@ -1,23 +1,23 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
-
-@Schema()
+@Schema({ collection: 'bronze_trips' })
 export class BronzeTrip {
-  // Données brutes d'une ligne 
+  // Données originales du trajet BIXI
   @Prop({ type: Object, required: true })
-  raw_data: any;
+  rawData!: Record<string, unknown>;
 
-  // Identifiant unique 
+  // Empreinte permettant de détecter les doublons
   @Prop({ required: true, unique: true })
-  observation_hash: string;
+  observation_hash!: string;
 
-  // Nom du fichier importé
+  // Nom du fichier CSV source
   @Prop({ required: true })
-  source_file: string;
+  source_file!: string;
 
-  // Date de l'importation
-  @Prop({ default: Date.now })
-  imported_at: Date;
+  // Date d'importation
+  @Prop({ type: Date, default: Date.now })
+  imported_at!: Date;
 }
 
-export const BronzeTripSchema = SchemaFactory.createForClass(BronzeTrip);
+export const BronzeTripSchema =
+  SchemaFactory.createForClass(BronzeTrip);
