@@ -33,11 +33,11 @@ jobs:
       - name: Publier le rapport de tests
         uses: actions/upload-artifact@v5
         with:
-          name: rapport-jacoco
+          name: rapport-tests
           path: coverage/Icov-report/index.html
 
       - name: Publier le build
         uses: actions/upload-artifact@v5
         with:
-          name: Bixi Chouette Backend
+          name: Bixi_Chouette_Backend
           path: dist
