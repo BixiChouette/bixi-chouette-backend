@@ -7,9 +7,10 @@ import { DatabaseModule } from './database/database.module';
 import databaseConfig from './config/database.config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import {BronzeTrip, BronzeTripSchema} from './schemas/bronze-trip.schema';
-import { SilverTrip, SilverTripSchema } from './schemas/silver-trip.schema';
-import { GoldStat, GoldStatSchema } from './schemas/gold-stat.schema';
+import { AnalyticsModule } from './analytics/analytics.module';
+import { AuthModule } from './auth/auth.module';
+import { AdminModule } from './admin/admin.module';
+import { ObservationsModule } from './observations/observations.module';
 
 @Module({
   imports: [
@@ -31,6 +32,10 @@ import { GoldStat, GoldStatSchema } from './schemas/gold-stat.schema';
       }),
     }),
     DatabaseModule,
+    ObservationsModule,
+    AnalyticsModule,
+    AuthModule,
+    AdminModule,
   ],
   controllers: [AppController],
   providers: [AppService],

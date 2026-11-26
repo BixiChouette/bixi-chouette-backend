@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { BronzeTrip, BronzeTripSchema } from '../schemas/bronze-trip.schema';
 import { ObservationsService } from './observations.service';
+import { ObservationsController } from './observations.controller';
 
 @Module({
   imports: [
@@ -11,5 +12,6 @@ import { ObservationsService } from './observations.service';
   ],
   providers: [ObservationsService],
   exports: [ObservationsService],
+  controllers: [ObservationsController],
 })
 export class ObservationsModule { }

@@ -26,16 +26,8 @@
     "@nestjs/core": "^11.0.1",
     "@nestjs/mongoose": "^12.0.1",
     "@nestjs/platform-express": "^11.0.1",
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "joi": "^18.3.2",
-=======
-    "csv-parser": "^3.2.1",
->>>>>>> 8492801f47fc1f5863bbab265b0772aae6b8442f
-=======
     "csv-parser": "^3.2.1",
     "joi": "^18.3.2",
->>>>>>> c555d0c1f9fd46895ca919b0b7824fa5c2459727
     "mongoose": "^9.12.3",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
