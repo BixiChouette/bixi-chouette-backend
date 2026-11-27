@@ -1,0 +1,48 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Configurer le Node.js 22
+        uses: actions/setup-node@v5
+        with:
+          java-version: 22
+  
+      - name: Installer les dependances
+        run: npm ci
+
+      - name: Assurance de qualite avec ESLint
+        run: npm run lint
+
+      - name: Lancer les tests avec jest
+        run: npm run test:cov
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: test_coverage
+          path: coverage/Icov-report/index.html
+
+      - name: Construire un build
+        run: npm run build
+
+      - name: Publier le rapport de tests
+        uses: actions/upload-artifact@v5
+        with:
+          name: rapport-tests
+          path: coverage/Icov-report/index.html
+
+      - name: Publier le build
+        uses: actions/upload-artifact@v5
+        with:
+          name: Bixi_Chouette_Backend
+          path: dist
