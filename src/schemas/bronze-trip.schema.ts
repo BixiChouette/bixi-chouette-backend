@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
+
 @Schema({ collection: 'bronze_trips' })
 export class BronzeTrip {
   // Données originales du trajet BIXI
@@ -21,3 +22,4 @@ export class BronzeTrip {
 
 export const BronzeTripSchema =
   SchemaFactory.createForClass(BronzeTrip);
+
