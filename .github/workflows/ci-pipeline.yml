@@ -27,6 +27,11 @@ jobs:
       - name: Lancer les tests avec jest
         run: npm run test:cov
 
+      - uses: actions/upload-artifact@v4
+        with:
+          name: test_coverage
+          path: coverage/Icov-report/index.html
+
       - name: Construire un build
         run: npm run build
 
